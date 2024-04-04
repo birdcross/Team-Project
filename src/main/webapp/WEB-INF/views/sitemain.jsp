@@ -40,15 +40,9 @@
                     <div class="d-flex justify-content-between">
 
                         <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
                             <a href="/Users/Login" style="color: inherit; text-decoration: none;">
-=======
                             <a href="/Users/login" style="color: inherit; text-decoration: none;">
->>>>>>> refs/remotes/origin/develop
-=======
                             <a href="/Users/Login" style="color: inherit; text-decoration: none;">
->>>>>>> refs/remotes/origin/lee
                                 <div class="card main_card" style="width:320px; height: 400px;">
                                     <div class="d-flex align-items-center justify-content-center ">
                                         <img src="/images/user1.png" class="card-img-top w-100 h-100">
