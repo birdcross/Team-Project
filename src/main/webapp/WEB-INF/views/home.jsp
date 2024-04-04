@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>나 home.jsp야  김우년 깃허브22222</h2>
-	   <a href="/test">Tesat</a>	
+	<h2>나 home.jsp야  asdfasdfasdfasdfasdfsadf</h2>
+	   <a href="/test">Test</a>	
 </body>
 </html>
