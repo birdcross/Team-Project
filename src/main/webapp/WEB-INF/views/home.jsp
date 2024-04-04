@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h2>나 home.jsp야</h2>
-	   <a href="/test">Test</a>	
+	   <a href="/test">Tesat</a>	
 </body>
 </html>
