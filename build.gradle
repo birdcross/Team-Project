@@ -89,7 +89,11 @@ dependencies {
 
 tasks.named('bootBuildImage') {
 	builder = 'paketobuildpacks/builder-jammy-base:latest'
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/lee
+=======
+>>>>>>> refs/remotes/origin/jin
+>>>>>>> refs/remotes/origin/develop
 }
 
 tasks.named('test') {

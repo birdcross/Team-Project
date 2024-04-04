@@ -83,7 +83,11 @@ echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
 echo.
 echo Please set the JAVA_HOME variable in your environment to match the
 echo location of your Java installation.
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/lee
+=======
+>>>>>>> refs/remotes/origin/jin
+>>>>>>> refs/remotes/origin/develop
 
 goto fail
 

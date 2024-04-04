@@ -1,5 +1,6 @@
 package com.TeamProject.users.domain;
 
+<<<<<<< HEAD
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,4 +17,8 @@ public class UserVo {
 	private  String user_tell;
 	private  String user_date;
 	private  String user_gender;
+=======
+public class UserVo {
+	
+>>>>>>> refs/remotes/origin/develop
 }

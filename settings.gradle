@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 rootProject.name = 'TeamProject'
+=======
+<<<<<<< HEAD
+rootProject.name = 'project1'
+=======
+rootProject.name = 'TeamProject'
+>>>>>>> refs/remotes/origin/jin
+>>>>>>> refs/remotes/origin/develop
