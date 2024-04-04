@@ -84,10 +84,14 @@ echo.
 echo Please set the JAVA_HOME variable in your environment to match the
 echo location of your Java installation.
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/lee
 =======
 >>>>>>> refs/remotes/origin/jin
 >>>>>>> refs/remotes/origin/develop
+=======
+>>>>>>> refs/remotes/origin/lee
+>>>>>>> refs/remotes/origin/lee
 
 goto fail
 
