@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>나 home.jsp야 dfasdfaasdfsdfasdffd gdsfsa</h2>
+	<h2>나 home.jsp야 dddddsdfsdfasdffd gdsfsa</h2>
 	   <a href="/test">Tesat</a>	
 </body>
 </html>
