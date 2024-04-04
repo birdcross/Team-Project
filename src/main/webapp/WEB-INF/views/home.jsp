@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>나 home.jsp야  asdfasdfasdfasdfasdfsadf</h2>
+	<h2>나 home.jsp야  김김김</h2>
 	   <a href="/test">Test</a>	
 </body>
 </html>
