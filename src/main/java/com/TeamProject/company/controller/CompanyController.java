@@ -7,9 +7,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.TeamProject.company.domain.CompanyVo;
 import com.TeamProject.company.mapper.CompanyMapper;
-import com.TeamProject.users.domain.UserVo;
-import com.TeamProject.users.mapper.UsersMapper;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
@@ -18,13 +18,6 @@ public class CompanyController {
 	@Autowired
 	private  CompanyMapper  companyMapper;
 	
-	
-	@RequestMapping("/Login")
-	public  String  loginForm() {
-
-		return "company/loginForm";
-	
-	}
 	@RequestMapping("/JoinForm")
 	public  ModelAndView   joinForm() {
 		
@@ -55,7 +48,72 @@ public class CompanyController {
 
 		return "company/info";
 	}
-}	
+	
+	@RequestMapping("/Login")
+	public   ModelAndView   loginForm() {		
+		ModelAndView   mv  =  new ModelAndView();
+		mv.setViewName("company/loginForm");
+		return         mv;
+	}
+	
+	@RequestMapping("/Login1")
+	public   ModelAndView   login( HttpServletRequest  request  ) {
+		
+		String     comid    =  request.getParameter("com_id");
+		String     compw    =  request.getParameter("com_pw");
+		
+		CompanyVo     companyVo    =  companyMapper.clogin( comid, compw  ); 
+		
+		String     loc       =  "";
+		if(  companyVo != null  ) { // 아이디와 암호가 일치하면
+			HttpSession  session =  request.getSession();
+			session.setAttribute("clogin", companyVo );
+			loc    =  "company/main";  
+		} else {  // 아이디 비번 틀림
+			loc    =  "company/loginForm"; 
+		}
+		
+		ModelAndView  mv  = new ModelAndView();
+		mv.setViewName( loc );		
+		return  mv;
+		
+	}
+	
+	@RequestMapping("/Logout")
+	public   String   logout(  HttpSession  session    ) {
+		session.invalidate();
+		return  "company/loginForm";
+	}
+	@RequestMapping("/Posts")
+	public  ModelAndView  PostsForm ( CompanyVo companyVo  ) {
+		
+		ModelAndView   mv   =  new  ModelAndView();
+		mv.setViewName("company/posts");
+		return mv;
+	}
+	@RequestMapping("/SavePostForm")
+	public  ModelAndView  SavePostForm ( CompanyVo companyVo  ) {
+		
+		ModelAndView   mv   =  new  ModelAndView();
+		mv.setViewName("company/savePostForm");
+		return mv;
+	}
+	@RequestMapping("/GetResume")
+	public  ModelAndView  GetResume ( CompanyVo companyVo  ) {
+		
+		ModelAndView   mv   =  new  ModelAndView();
+		mv.setViewName("company/getResume");
+		return mv;
+	}
+	@RequestMapping("/Scrap")
+	public  ModelAndView  Scrap ( CompanyVo companyVo  ) {
+		
+		ModelAndView   mv   =  new  ModelAndView();
+		mv.setViewName("company/scrap");
+		return mv;
+	}
+}
+
 
 
 

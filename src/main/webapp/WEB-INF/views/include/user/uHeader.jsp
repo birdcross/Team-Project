@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+	  <%@taglib  prefix = "c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +29,6 @@
 <body>
 	<header>
 		<input type="hidden" id="current" val="siteMain" />
-		<%-- 개인 로그인 --%>
 		<nav
 			class="sj_full_container navbar navbar-light sticky-top border-bottom align-self-center py-4 navcolor">
 			<div class="container d-flex justify-content-between">
@@ -48,13 +47,29 @@
 							class=" nav-link link-dark" href="/person/recommend">커뮤니티</a></li>
 						<li class="nav-item" id="recommend"><a
 							class=" nav-link link-dark" href="/person/recommend">고객센터</a></li>
-						<li class="nav-item"><a class="nav-link link-dark"
-							href="/logout">로그아웃</a></li>
+						
+						<c:choose>
+						  <c:when test="${ sessionScope.login == null || login == '' }">
+								<li class="nav-item"><a class="nav-link link-dark"
+									href="Login">로그인</a></li>
+						  </c:when>
+						  <c:otherwise>
+								<li>${ login.user_id } 님 환영합니다</li>	
+								<li><a href="/Users/Logout">로그아웃</a></li>
+						   </c:otherwise>
+						</c:choose>	
 					</ul>
+											
 				</div>
 				<div>
-					<a class="nav-link" href="/Users/Info"> <img
+					<c:choose>
+						  <c:when test="${ sessionScope.login == null || login == '' }">
+						  </c:when>
+						   <c:otherwise>
+						   <a class="nav-link" href="/Users/Info"> <img
 						src="/images/mypageicon.png" style="width: 40px;"></a>
+						   </c:otherwise>
+						</c:choose>	
 				</div>
 
 			</div>

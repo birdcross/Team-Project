@@ -40,8 +40,8 @@
                     <div class="d-flex justify-content-between">
 
                         <div>
-                            <a href="/Users/Login" style="color: inherit; text-decoration: none;">
-                            <a href="/Users/login" style="color: inherit; text-decoration: none;">
+               <c:choose>
+						  <c:when test="${ sessionScope.login == null || login == '' }">
                             <a href="/Users/Login" style="color: inherit; text-decoration: none;">
                                 <div class="card main_card" style="width:320px; height: 400px;">
                                     <div class="d-flex align-items-center justify-content-center ">
@@ -52,8 +52,21 @@
                                     </div>
                                 </div>
                             </a>
+                            </c:when>
+						  <c:otherwise>
+						   <a href="/Users/Main" style="color: inherit; text-decoration: none;">
+                                <div class="card main_card" style="width:320px; height: 400px;">
+                                    <div class="d-flex align-items-center justify-content-center ">
+                                        <img src="/images/user1.png" class="card-img-top w-100 h-100">
+                                    </div>
+                                    <div class="card-body align-self-center mt-2">
+                                        <h3>개인 회원</h3>
+                                    </div>
+                                </div>
+                            </a>
+						  </c:otherwise>
+						</c:choose>	
                         </div>
-
                         <div>
                             <a href="/Company/Login" style="color: inherit; text-decoration: none; ">
                                 <div class="card main_card" style="width:320px; height: 400px;">

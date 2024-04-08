@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@include file="/WEB-INF/views/include/user/uHeader.jsp" %>
-
+<%@taglib  prefix = "c" uri="http://java.sun.com/jsp/jstl/core" %>  
         <div style="margin-top: 100px; margin-bottom: 100px;">
         <div class="d-flex justify-content-center">
             <h2>개인 회원가입</h2>
@@ -15,7 +15,7 @@
                     <div class="form-group form-floating m-3 mx-auto">
                         <input type="text" name="managerName" class="form-control" id="floatingInput"
                             placeholder="사용자 이름" required>
-                        <label for="floatingInput">담당자 이름
+                        <label for="floatingInput">담당자 이름</label>
                     </div>
 
                     <div class="form-group form-floating m-3 mx-auto">
@@ -48,8 +48,6 @@
                         <label for="floatingInput">비밀번호 확인</label>
                     </div>
                     <div class="form-group form-floating m-3 mx-auto">
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <input type="radio" class="form-control" id="floatingInput" placeholder="name@example.com"
                             required>
                         <label for="floatingInput">성별</label>
@@ -73,8 +71,6 @@
 
                     <div class="form-group form-floating m-3 mx-auto">
                         <button type="submit" class="btn  btn-block" style="width: 265px; background-color: rgb(63, 189, 214);">가입하기</button>
->>>>>>> refs/remotes/origin/develop
-=======
                         <input type="radio" class="form-control" id="floatingInput" placeholder="name@example.com"
                             required>
                         <label for="floatingInput">성별</label>
@@ -85,7 +81,6 @@
 
                     <div class="form-group form-floating m-3 mx-auto">
                         <button type="submit" class="btn  btn-block" style="width: 265px; background-color: #a8e455;">가입하기</button>
->>>>>>> refs/remotes/origin/lee
                     </div>
 
                 </form>

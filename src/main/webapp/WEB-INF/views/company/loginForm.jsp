@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@include file="/WEB-INF/views/include/company/cHeader.jsp" %>
-
+	  <%@taglib  prefix = "c" uri="http://java.sun.com/jsp/jstl/core" %>  
         <div style="margin-top: 100px; margin-bottom: 100px;">
             <div class="d-flex justify-content-center mb-4">
                 <h2>기업 회원</h2>
@@ -9,16 +9,16 @@
 
                 <div class="border rounded p-3 m-3 shadow" style="width: 300px;">
 
-                    <form action="/Company/Login" method="post">
+                    <form action="/Company/Login1" method="post">
 
                         <div class="form-group form-floating m-3 mx-auto">
-                            <input type="text" name="email" class="form-control" id="floatingInput"
+                            <input type="text" name="com_id" class="form-control" id="floatingInput"
                                 placeholder="사용자 이메일" required>
-                            <label for="floatingInput">사용자 이메일
+                            <label for="floatingInput">사용자 이메일</label>
                         </div>
 
                         <div class="form-group form-floating m-3 mx-auto">
-                            <input type="password" name="password" class="form-control" id="floatingInput"
+                            <input type="password" name="com_pw" class="form-control" id="floatingInput"
                                 placeholder="name@example.com" required>
                             <label for="floatingInput">password</label>
                         </div>

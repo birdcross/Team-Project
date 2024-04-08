@@ -10,12 +10,12 @@
             <div class="border rounded p-3 m-3 shadow" style="width: 300px;">
 
                 <!-- companyJoin 실행 후 이동해도 됨! -->
-                <form action="/Users/Join" method="post">
+                <form action="/Users/Main" method="post">
 
                     <div class="form-group form-floating m-3 mx-auto">
                         <input type="text" name="user_name" class="form-control" id="floatingInput"
-                            placeholder="사용자 이름" required>
-                        <label for="floatingInput">사용자 이름
+                            placeholder="사용자 이름"  value = "${sessionScope.login.userid}" required>
+                        <label for="floatingInput">사용자 이름</label>
                     </div>
 
                     <div class="form-group form-floating m-3 mx-auto">

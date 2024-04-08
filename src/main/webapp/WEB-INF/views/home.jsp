@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h2>나 home.jsp야 6:35</h2>
-	   <a href="/test">Tesat</a>	
+	   <a href="/test">K i m        </a>	
 </body>
 </html>
