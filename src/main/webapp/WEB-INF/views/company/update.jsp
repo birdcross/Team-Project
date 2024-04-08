@@ -12,7 +12,7 @@
             <div class=" mx-2 pb-4 w-100">
             <div class="border border-tertiary p-5 rounded shadow">
                     <div class="d-flex justify-content-between">
-                    <h1 class="d-inline-flex">${companyPS.name} 정보</h1>
+                    <h1 class="d-inline-flex">${companyPS.name} 수         정</h1>
                     <button type="button" class="btn btn-dark"
                      style="width:100px; height:40px;" onclick="location.href=`/company/updateInfoForm`;">수정하기</button>
                      </div>
