@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h2>나 home.jsp야 6:35</h2>
-	   <a href="/test">K i m        </a>	
+	   <a href="/test">김우년        </a>	
 </body>
 </html>
