@@ -11,40 +11,37 @@
             <div class="border rounded p-3 m-3 shadow" style="width: 300px;">
 
                 <!-- companyJoin 실행 후 이동해도 됨! -->
-                <form action="/Company/Join" method="post">
+                <form action="/Company/Join" method="POST">
+                
+                
                     <div class="form-group form-floating m-3 mx-auto">
-                        <input type="text" name="com_name" class="form-control" id="floatingInput" placeholder="사용자 이름"
-                            required>
+ <input type="email" name="com_id" class="form-control" id="floatingInput" placeholder="" required>
+                        <label for="floatingInput">회사아이디</label>
+                    </div>
+                    
+                    <div class="form-group form-floating m-3 mx-auto">
+<input type="text" name="com_name" class="form-control" id="floatingInput" placeholder="" required>
                         <label for="floatingInput">회사명
                     </div>
 
                     <div class="form-group form-floating m-3 mx-auto">
-                        <input type="text" name="com_num" maxlength="10" class="form-control" id="floatingInput"
-                            placeholder="name@example.com" required>
-                        <label for="floatingInput">사업자 번호</label>
+<input type="text" name="com_num" maxlength="10" class="form-control" id="floatingInput" placeholder="" required>
+                        <label for="floatingInput">사업자등록번호</label>
                     </div>
 
                     <div class="form-group form-floating m-3 mx-auto">
-                        <input type="text" name="com_boss" class="form-control" id="floatingInput"
-                            placeholder="사용자 이름" required>
+<input type="text" name="com_boss" class="form-control" id="floatingInput" placeholder="" required>
                         <label for="floatingInput">대표자 성명
                     </div>
 
-                    <div class="form-group form-floating m-3 mx-auto">
-                        <input type="email" name="com_id" class="form-control" id="floatingInput"
-                            placeholder="name@example.com" required>
-                        <label for="floatingInput">아이디</label>
-                    </div>
 
                     <div class="form-group form-floating m-3 mx-auto">
-                        <input type="password" name="com_pw" class="form-control" id="floatingInput"
-                            placeholder="name@example.com" required>
+<input type="password" name="com_pw" class="form-control" id="floatingInput" placeholder="" required>
                         <label for="floatingInput">비밀번호</label>
                     </div>
 
                     <div class="form-group form-floating m-3 mx-auto">
-                        <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com"
-                            required>
+<input type="password" class="form-control" id="floatingInput" placeholder="" required>
                         <label for="floatingInput">비밀번호 확인</label>
                     </div>
 
@@ -57,7 +54,7 @@
 
                 </form>
                 <div class="text-center sj_login_join">
-                    <p><a href="/Company/Login">이미 회원이신가요?</a></p>
+                    <p><a href="/Company/LoginForm">이미 회원이신가요?</a></p>
                 </div>
             </div>
         </div>

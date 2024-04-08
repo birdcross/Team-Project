@@ -12,9 +12,8 @@
             <div class=" mx-2 pb-4 w-100">
             <div class="border border-tertiary p-5 rounded shadow">
                     <div class="d-flex justify-content-between">
-                    <h1 class="d-inline-flex">${vo.com_name} 회사정보</h1>
-                    <button type="button" class="btn btn-dark"
-                     style="width:100px; height:40px;" onclick="location.href=`/Company/Update`;">수정하기</button>
+                    <h1 class="d-inline-flex">${vo.com_name} 회사정보 수정</h1>
+                   
                      </div>
 
 
@@ -23,24 +22,44 @@
 
                 <div>
                     <div class="container w-50 mt-5 text ">
-                        <form>
+                        <form action="/Users/Update" method="POST">
                             <div class="input-group mb-3">
                                 <span class="input-group-text justify-content-center hs_span_size init_color hs_span">회사아이디</span>
-                                <input type="text" class="form-control" value="${vo.com_id}" readonly>
+                                <input type="text" class="form-control" value="${vo.com_id}" >
                             </div>
                             <div class="input-group mb-3">
-                                <span class="input-group-text justify-content-center hs_span_size init_color hs_span">회사명</span>
-                                <input type=" text" class="form-control" value="${vo.com_name}" readonly>
+                                <span class="input-group-text  justify-content-center hs_span_size init_color hs_span">회사명</span>
+                                <input type="text" class="form-control" value="${vo.com_name}" >
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text  justify-content-center hs_span_size init_color hs_span">사업자등록번호</span>
-                                <input type="text" class="form-control" value="${vo.com_num}" readonly>
+                                <input type="text" class="form-control" value="${vo.com_num}" >
                             </div>
                             <div class="input-group mb-3">
-                                <span class="input-group-text  justify-content-center hs_span_size init_color hs_span">대표자 성명</span>
-                                <input type="text" class="form-control" value="${vo.com_boss}" readonly>
+                                <span class="input-group-text justify-content-center hs_span_size init_color hs_span">대표자</span>
+                                <input type="text" class="form-control" value="${vo.com_boss}" >
                             </div>
-                           
+                            <div class="input-group mb-3">
+                                <span class="input-group-text justify-content-center hs_span_size init_color hs_span">비밀번호</span>
+                                <input type=" text" class="form-control" value="${vo.com_pw}" >
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text justify-content-center hs_span_size init_color hs_span">비밀번호확인</span>
+                                <input type=" text" class="form-control" value="${vo.com_pw}" >
+                            </div>
+
+                        
+                            
+                             <br>
+                             <hr>
+                            
+                                 
+            
+  <div class="d-flex justify-content-between">
+  <button type="submit" class="btn btn-dark" style="width:100px; height:40px;">수정완료</button>
+  <button type="button" class="btn btn-dark" style="width:100px; height:40px;" onclick="location.href=`/Company/LoginForm`;">회원탈퇴</button>
+  </div>
+
                         </form>
 
                     </div>

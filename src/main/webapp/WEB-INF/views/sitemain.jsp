@@ -55,7 +55,7 @@
                         </div>
 
                         <div>
-                            <a href="/Company/Login" style="color: inherit; text-decoration: none; ">
+                            <a href="/Company/LoginForm" style="color: inherit; text-decoration: none; ">
                                 <div class="card main_card" style="width:320px; height: 400px;">
                                     <div class="d-flex align-items-center justify-content-center">
                                         <img src="/images/company.png" class="card-img-top w-100 h-100">

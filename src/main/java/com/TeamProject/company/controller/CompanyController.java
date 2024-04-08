@@ -1,5 +1,7 @@
 package com.TeamProject.company.controller;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,29 +13,32 @@ import com.TeamProject.users.domain.UserVo;
 import com.TeamProject.users.mapper.UsersMapper;
 
 import lombok.extern.slf4j.Slf4j;
+
 @Slf4j
 @Controller
 @RequestMapping("/Company")
 public class CompanyController {
+	
 	@Autowired
 	private  CompanyMapper  companyMapper;
 	
 	
-	@RequestMapping("/Login")
-	public  String  loginForm() {
+	@RequestMapping("/LoginForm")
+	public  ModelAndView  loginForm() {
 
-		return "company/loginForm";
+		ModelAndView    mv    = new ModelAndView();		
+		mv.setViewName("company/loginForm");
+		return  mv;
 	
 	}
 	@RequestMapping("/JoinForm")
-	public  ModelAndView   joinForm() {
+public  ModelAndView   joinForm() {
 		
 		ModelAndView    mv    = new ModelAndView();		
 		mv.setViewName("company/joinForm");
 		return  mv;
-		
 	}
-	
+
 	//  /Users/Join
 	@RequestMapping("/Join")
 	public  ModelAndView  join( CompanyVo  companyVo ) {		
@@ -42,18 +47,63 @@ public class CompanyController {
 		
 		// 데이터를 가지고 이동한다
 		ModelAndView   mv   =  new  ModelAndView();
-		mv.setViewName("redirect:/Company/Login");
+		mv.setViewName("redirect:/company/loginForm");
 		return   mv;
 	}
+	
 	@RequestMapping("/Main")
-	public  String  Main() {
-
-		return "company/main";
+public  ModelAndView  main() {
+		
+		ModelAndView    mv    = new ModelAndView();		
+		mv.setViewName("company/main");
+		return  mv;
 	}
+	
+	
+	
 	@RequestMapping("/Info")
-	public  String  Info() {
+public  ModelAndView   info( CompanyVo  companyVo ) {
+		
+		// user_id=aa  db 조회
+		HashMap<String, Object>  map  =  companyMapper.getCompany( companyVo );   
+		// System.out.println( vo );
+		log.info("map : {}", map);
+		
+		// map.get("userid")
+		
+		ModelAndView  mv  =  new ModelAndView();
+		mv.addObject("vo", map);
+		mv.setViewName("company/info");
+		return  mv;		
+	}
+		
+	
+		
+	
+	@RequestMapping("/Update")
+	public  ModelAndView   update( CompanyVo  companyVo ) {
+		
+			log.info( "companyVo : {}",  companyVo  );
+			// 수정
+			
+			companyMapper.updateCompany( companyVo ); 
+			
+			ModelAndView   mv  =  new ModelAndView();		
+			mv.setViewName("redirect:/company/loginForm");		
+			return  mv;
+		
+	}
+	
+	
+	@RequestMapping("/Delete")
+	public  ModelAndView   delete( CompanyVo  companyVo ) {
+		
+		companyMapper.deleteCompany( companyVo );
 
-		return "company/info";
+		ModelAndView    mv    = new ModelAndView();		
+		mv.setViewName("redirect:/company/loginForm");
+		return  mv;
+		
 	}
 }	
 

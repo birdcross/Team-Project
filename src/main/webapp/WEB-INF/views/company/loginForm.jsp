@@ -9,12 +9,12 @@
 
                 <div class="border rounded p-3 m-3 shadow" style="width: 300px;">
 
-                    <form action="/Company/Login" method="post">
+                    <form action="/Company/Main" method="post">
 
                         <div class="form-group form-floating m-3 mx-auto">
-                            <input type="text" name="email" class="form-control" id="floatingInput"
+                            <input type="email" name="email" class="form-control" id="floatingInput"
                                 placeholder="사용자 이메일" required>
-                            <label for="floatingInput">사용자 이메일
+                            <label for="floatingInput">회사아이디
                         </div>
 
                         <div class="form-group form-floating m-3 mx-auto">
