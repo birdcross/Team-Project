@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.TeamProject.users.resume.mapper.ResumeMapper">
+
+  <resultMap id="getResumeMap" type="java.util.HashMap">
+	 <result property="re_num"       column="re_num"   />
+	 <result property="user_id"      column="user_id"   />
+	 <result property="user_title"   column="user_title"   />
+	 <result property="skill"        column="skill" />
+	 <result property="career"       column="emcareerail"    />
+	 <result property="region"       column="region"      />
+	 <result property="user_port"    column="user_port"   />
+	 <result property="user_intti"   column="user_intti"   />	
+	 <result property="user_intco"   column="user_intco"   />	
+	 <result property="user_img"     column="user_img"   />	
+	</resultMap>
+	
+  <resultMap id="getRenumMap" type="java.util.HashMap">
+	 <result property="re_num"       column="re_num"   />
+	</resultMap>
+			
+  <select   id="getResume" 
+  			resultMap = "getResumeMap">
+    	SELECT  
+    	 	 RE_NUM
+			, USER_ID
+			, USER_TITLE
+			, SKILL
+			, CAREER
+			, REGION
+			, USER_PORT
+			, USER_INTTI
+			, USER_INTCO
+    	 FROM  
+           RESUME
+         WHERE
+           USER_ID = #{ user_id }
+     </select>
+     
+  <select   id="getResumeList" >
+    	SELECT  
+    	 	 RE_NUM
+			, USER_ID
+			, USER_TITLE
+			, SKILL
+			, CAREER
+			, REGION
+			, USER_PORT
+			, USER_INTTI
+			, USER_INTCO
+    	 FROM  
+           RESUME
+         WHERE
+           USER_ID = #{ user_id }
+     </select>
+     
+     
+     
+  
+  
+</mapper>

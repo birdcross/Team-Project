@@ -3,10 +3,10 @@
     
     <div class="container d-flex">
         <div class="list-group mx-2">
-            <a href="/company/info" class="list-group-item  hs_list_effect shadow" style="width: 150px;">회사 정보</a>
-            <a href="/company/posts" class="list-group-item shadow">공고 관리</a>
-            <a href="/company/getResume" class="list-group-item shadow">받은 이력서</a>
-            <a href="/company/scrap" class="list-group-item shadow">스크랩한 유저</a>
+            <a href="/Company/Info" class="list-group-item  hs_list_effect shadow" style="width: 150px;">회사 정보</a>
+            <a href="/Company/Posts" class="list-group-item shadow">공고 관리</a>
+            <a href="/Company/GetResume" class="list-group-item shadow">받은 이력서</a>
+            <a href="/Company/Scrap" class="list-group-item shadow">스크랩한 구직자</a>
         </div>
 
             <div class=" mx-2 pb-4 w-100">

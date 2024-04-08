@@ -14,8 +14,8 @@
 
                     <div class="form-group form-floating m-3 mx-auto">
                         <input type="text" name="user_name" class="form-control" id="floatingInput"
-                            placeholder="사용자 이름" required>
-                        <label for="floatingInput">사용자 이름
+                            placeholder="사용자 이름"  value = "${sessionScope.login.userid}" required>
+                        <label for="floatingInput">사용자 이름</label>
                     </div>
 
                     <div class="form-group form-floating m-3 mx-auto">

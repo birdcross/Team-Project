@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@include file="/WEB-INF/views/include/user/uHeader.jsp" %>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
         
         <script>
@@ -38,14 +39,14 @@
                 </div>
                 <div class="container jm_container mt-5">
                     <div class="row row-cols-3 g-4 d-flex flex-wrap">
-                      <%--   <c:forEach items="${mainPosts}" var="post" varStatus="status"> --%>
+                       <c:forEach items="${ postList }" var="Vo" varStatus="status"> 
                             <div class="col-xs-4 post">
-                                <a href="/person/detail/${post.postId}" style="color: inherit; text-decoration: none;">
+                                <a href="/Users/View?po_num=${ Vo.po_num }&user_id=${ sessionScope.login.user_id }" style="color: inherit; text-decoration: none;">
                                     <div class="card jm_card h-100">
-                                        <img src="${post.logo}" class="card-img-top jm_card_img_top">
+                                        <img src="${Vo.po_image}" class="card-img-top jm_card_img_top">
                                         <div class="card-body jm_card_body">
-                                            <div class="jm_company_name">${post.name}</div>
-                                            <div class="jm_company_title"> ${post.title} </div>
+                                            <div class="jm_company_name">공고번호 : ${ Vo.po_num }</div>
+                                            <div class="jm_company_title">${ Vo.po_title}</div>
 
                                             <div class="jm_company_address">${post.address}</div>
                                             <div class="jm_D-day d-flex justify-content-between">
@@ -72,177 +73,8 @@
                                 <input type="hidden" value="${post.deadline}" name="" class="deadline"
                                     id="deadline-${status.count}" />
                             </div>
-                   <!--      </c:forEach> -->
+                         </c:forEach> 
 <div class="col-xs-4 post">
-                                <a href="/person/detail/${post.postId}" style="color: inherit; text-decoration: none;">
-                                    <div class="card jm_card h-100">
-                                        <img src="${post.logo}" class="card-img-top jm_card_img_top">
-                                        <div class="card-body jm_card_body">
-                                            <div class="jm_company_name">${post.name}</div>
-                                            <div class="jm_company_title"> ${post.title} </div>
-
-                                            <div class="jm_company_address">${post.address}</div>
-                                            <div class="jm_D-day d-flex justify-content-between">
-                                                <div id="dDay-${status.count}"></div>
-
-                                                <button type="button" class="btn btn-sm"
-                                                    onclick="scrapOrCancle(event, ${post.postId})">
-                                                    <c:choose>
-                                                        <c:when test="${post.scrap == 0}">
-                                                            <i class="fa-regular text-secondary fa-thumbs-up fa-2xl"
-                                                                id="scrap-${post.postId}" value="${post.scrap}"></i>
-                                                        </c:when>
-
-                                                        <c:otherwise>
-                                                            <i class="fa-solid scrap_icon fa-thumbs-up fa-2xl"
-                                                                id="scrap-${post.postId}" value="${post.scrap}"></i>
-                                                        </c:otherwise>
-                                                    </c:choose>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <input type="hidden" value="${post.deadline}" name="" class="deadline"
-                                    id="deadline-${status.count}" />
-                            </div>
-                            <div class="col-xs-4 post">
-                                <a href="/person/detail/${post.postId}" style="color: inherit; text-decoration: none;">
-                                    <div class="card jm_card h-100">
-                                        <img src="${post.logo}" class="card-img-top jm_card_img_top">
-                                        <div class="card-body jm_card_body">
-                                            <div class="jm_company_name">${post.name}</div>
-                                            <div class="jm_company_title"> ${post.title} </div>
-
-                                            <div class="jm_company_address">${post.address}</div>
-                                            <div class="jm_D-day d-flex justify-content-between">
-                                                <div id="dDay-${status.count}"></div>
-
-                                                <button type="button" class="btn btn-sm"
-                                                    onclick="scrapOrCancle(event, ${post.postId})">
-                                                    <c:choose>
-                                                        <c:when test="${post.scrap == 0}">
-                                                            <i class="fa-regular text-secondary fa-thumbs-up fa-2xl"
-                                                                id="scrap-${post.postId}" value="${post.scrap}"></i>
-                                                        </c:when>
-
-                                                        <c:otherwise>
-                                                            <i class="fa-solid scrap_icon fa-thumbs-up fa-2xl"
-                                                                id="scrap-${post.postId}" value="${post.scrap}"></i>
-                                                        </c:otherwise>
-                                                    </c:choose>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <input type="hidden" value="${post.deadline}" name="" class="deadline"
-                                    id="deadline-${status.count}" />
-                            </div>
-                            <div class="col-xs-4 post">
-                                <a href="/person/detail/${post.postId}" style="color: inherit; text-decoration: none;">
-                                    <div class="card jm_card h-100">
-                                        <img src="${post.logo}" class="card-img-top jm_card_img_top">
-                                        <div class="card-body jm_card_body">
-                                            <div class="jm_company_name">${post.name}</div>
-                                            <div class="jm_company_title"> ${post.title} </div>
-
-                                            <div class="jm_company_address">${post.address}</div>
-                                            <div class="jm_D-day d-flex justify-content-between">
-                                                <div id="dDay-${status.count}"></div>
-
-                                                <button type="button" class="btn btn-sm"
-                                                    onclick="scrapOrCancle(event, ${post.postId})">
-                                                    <c:choose>
-                                                        <c:when test="${post.scrap == 0}">
-                                                            <i class="fa-regular text-secondary fa-thumbs-up fa-2xl"
-                                                                id="scrap-${post.postId}" value="${post.scrap}"></i>
-                                                        </c:when>
-
-                                                        <c:otherwise>
-                                                            <i class="fa-solid scrap_icon fa-thumbs-up fa-2xl"
-                                                                id="scrap-${post.postId}" value="${post.scrap}"></i>
-                                                        </c:otherwise>
-                                                    </c:choose>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <input type="hidden" value="${post.deadline}" name="" class="deadline"
-                                    id="deadline-${status.count}" />
-                            </div>
-                            <div class="col-xs-4 post">
-                                <a href="/person/detail/${post.postId}" style="color: inherit; text-decoration: none;">
-                                    <div class="card jm_card h-100">
-                                        <img src="${post.logo}" class="card-img-top jm_card_img_top">
-                                        <div class="card-body jm_card_body">
-                                            <div class="jm_company_name">${post.name}</div>
-                                            <div class="jm_company_title"> ${post.title} </div>
-
-                                            <div class="jm_company_address">${post.address}</div>
-                                            <div class="jm_D-day d-flex justify-content-between">
-                                                <div id="dDay-${status.count}"></div>
-
-                                                <button type="button" class="btn btn-sm"
-                                                    onclick="scrapOrCancle(event, ${post.postId})">
-                                                    <c:choose>
-                                                        <c:when test="${post.scrap == 0}">
-                                                            <i class="fa-regular text-secondary fa-thumbs-up fa-2xl"
-                                                                id="scrap-${post.postId}" value="${post.scrap}"></i>
-                                                        </c:when>
-
-                                                        <c:otherwise>
-                                                            <i class="fa-solid scrap_icon fa-thumbs-up fa-2xl"
-                                                                id="scrap-${post.postId}" value="${post.scrap}"></i>
-                                                        </c:otherwise>
-                                                    </c:choose>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <input type="hidden" value="${post.deadline}" name="" class="deadline"
-                                    id="deadline-${status.count}" />
-                            </div>
-                            <div class="col-xs-4 post">
-                                <a href="/person/detail/${post.postId}" style="color: inherit; text-decoration: none;">
-                                    <div class="card jm_card h-100">
-                                        <img src="${post.logo}" class="card-img-top jm_card_img_top">
-                                        <div class="card-body jm_card_body">
-                                            <div class="jm_company_name">${post.name}</div>
-                                            <div class="jm_company_title"> ${post.title} </div>
-
-                                            <div class="jm_company_address">${post.address}</div>
-                                            <div class="jm_D-day d-flex justify-content-between">
-                                                <div id="dDay-${status.count}"></div>
-
-                                                <button type="button" class="btn btn-sm"
-                                                    onclick="scrapOrCancle(event, ${post.postId})">
-                                                    <c:choose>
-                                                        <c:when test="${post.scrap == 0}">
-                                                            <i class="fa-regular text-secondary fa-thumbs-up fa-2xl"
-                                                                id="scrap-${post.postId}" value="${post.scrap}"></i>
-                                                        </c:when>
-
-                                                        <c:otherwise>
-                                                            <i class="fa-solid scrap_icon fa-thumbs-up fa-2xl"
-                                                                id="scrap-${post.postId}" value="${post.scrap}"></i>
-                                                        </c:otherwise>
-                                                    </c:choose>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <input type="hidden" value="${post.deadline}" name="" class="deadline"
-                                    id="deadline-${status.count}" />
-                            </div>
-
-                        <input type="hidden" value="${size}" id="postSize" />
-                    </div>
-                </div>
-
         <script>
             // 1. 마감 1일 후 숨기기, 디데이 설정
             let postSize = document.querySelector("#postSize").getAttribute("value");

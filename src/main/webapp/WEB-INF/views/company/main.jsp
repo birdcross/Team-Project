@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
     <%@include file="/WEB-INF/views/include/company/cHeader.jsp" %>
-
+	  <%@taglib  prefix = "c" uri="http://java.sun.com/jsp/jstl/core" %>  
         
         <script>
             let deadline;
@@ -38,7 +38,6 @@
                 </div>
                 <div class="container jm_container mt-5">
                     <div class="row row-cols-3 g-4 d-flex flex-wrap">
-                      <%--   <c:forEach items="${mainPosts}" var="post" varStatus="status"> --%>
                             <div class="col-xs-4 post">
                                 <a href="/person/detail/${post.postId}" style="color: inherit; text-decoration: none;">
                                     <div class="card jm_card h-100">
@@ -72,7 +71,6 @@
                                 <input type="hidden" value="${post.deadline}" name="" class="deadline"
                                     id="deadline-${status.count}" />
                             </div>
-                   <!--      </c:forEach> -->
 <div class="col-xs-4 post">
                                 <a href="/person/detail/${post.postId}" style="color: inherit; text-decoration: none;">
                                     <div class="card jm_card h-100">
