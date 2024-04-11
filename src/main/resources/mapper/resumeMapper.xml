@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.TeamProject.users.resume.mapper.ResumeMapper">
+
+  <resultMap id="getResumeMap" type="java.util.HashMap">
+	 <result property="re_num"       column="re_num"   />
+	 <result property="user_id"      column="user_id"   />
+	 <result property="user_title"   column="user_title"   />
+	 <result property="skill"        column="skill" />
+	 <result property="career"       column="emcareerail"    />
+	 <result property="region"       column="region"      />
+	 <result property="user_port"    column="user_port"   />
+	 <result property="user_intti"   column="user_intti"   />	
+	 <result property="user_intco"   column="user_intco"   />	
+	 <result property="user_img"     column="user_img"   />	
+	</resultMap>
+	
+  <resultMap id="getSRListMap" type="java.util.HashMap">
+	 <result property="re_num"       column="re_num"   />
+	 <result property="user_id"      column="user_id"   />
+	 <result property="user_title"   column="user_title"   />
+	 <result property="skill"        column="skill" />
+	 <result property="career"       column="emcareerail"    />
+	 <result property="region"       column="region"      />
+	 <result property="user_port"    column="user_port"   />
+	 <result property="user_intti"   column="user_intti"   />	
+	 <result property="user_intco"   column="user_intco"   />	
+	 <result property="user_name"     column="user_name"   />	
+	 <result property="user_tell"     column="user_tell"   />	
+	 <result property="user_date"     column="user_date"   />	
+	</resultMap>
+			
+  <select   id="getResume" 
+  			resultMap = "getResumeMap">
+    	SELECT  
+    	 	 RE_NUM
+			, USER_ID
+			, USER_TITLE
+			, SKILL
+			, CAREER
+			, REGION
+			, USER_PORT
+			, USER_INTTI
+			, USER_INTCO
+    	 FROM  
+           RESUME
+         WHERE
+           USER_ID = #{ user_id }
+     </select>
+     
+  <select   id="getResumeList" >
+    	SELECT  
+    	 	 RE_NUM
+			, USER_ID
+			, USER_TITLE
+			, SKILL
+			, CAREER
+			, REGION
+			, USER_PORT
+			, USER_INTTI
+			, USER_INTCO
+    	 FROM  
+           RESUME
+         WHERE
+           USER_ID = #{ user_id }
+     </select>
+     
+  <select   id="getSRList" 
+  		resultMap="getSRListMap">
+    	SELECT  
+    	 	 RE.RE_NUM
+			, RE.USER_ID
+			, RE.USER_TITLE
+			, RE.SKILL
+			, RE.CAREER
+			, RE.REGION
+			, RE.USER_PORT
+			, RE.USER_INTTI
+			, RE.USER_INTCO
+			, US.USER_NAME
+			, US.USER_TELL
+			, US.USER_DATE
+    	 FROM  
+           RESUME RE, USERS US
+         WHERE
+           RE.USER_ID = #{ user_id }
+          AND
+           RE.USER_ID = US.USER_ID
+     </select>
+     
+     
+     <insert id="insertResume" >
+      INSERT INTO RESUME (RE_NUM
+						, USER_ID
+						, USER_TITLE
+						, SKILL
+						, CAREER
+						, REGION
+						, USER_PORT
+						, USER_INTTI
+						, USER_INTCO
+						 )
+				VALUES ( (SELECT  NVL(MAX(RE_NUM), 0)+1 FROM  RESUME )
+						, #{ user_id    }
+						, #{ user_title }
+						, #{ skill      }
+						, #{ career     }
+						, #{ region     }
+						, #{ user_port  }
+						, #{ user_intti }
+						, #{ user_intco }
+						 )
+    
+     </insert>
+     
+     <select   id="getResumeVo" >
+    	SELECT  
+    	 	 RE_NUM
+			, USER_ID
+			, USER_TITLE
+			, SKILL
+			, CAREER
+			, REGION
+			, USER_PORT
+			, USER_INTTI
+			, USER_INTCO
+    	 FROM  
+           RESUME
+         WHERE
+           RE_NUM = #{ re_num }
+     </select>
+     
+</mapper>

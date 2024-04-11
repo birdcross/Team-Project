@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.TeamProject.users.post.mapper.PostMapper">
+
+  <resultMap id="getViewMap" type="java.util.HashMap">
+	 <result property="com_name"       column="com_name"   />
+	 <result property="po_num"         column="po_num"   />
+	 <result property="com_id"         column="com_id"   />
+	 <result property="po_title"       column="po_title"   />
+	 <result property="skill"          column="skill" />
+	 <result property="career"         column="career"    />
+	 <result property="region"         column="region"      />
+	 <result property="emplo"          column="emplo"   />
+	 <result property="po_subtitle"    column="po_subtitle"   />	
+	 <result property="po_content"     column="po_content"   />	
+	 <result property="po_image"       column="po_image"   />	
+	</resultMap>
+			
+
+  <select   id="getPostList" >
+    	SELECT  
+    	  PO_NUM
+		, COM_ID
+		, PO_TITLE
+		, SKILL
+		, CAREER
+		, REGION
+		, EMPLO
+		, PO_SUBTITLE
+		, PO_CONTENT
+		, PO_IMAGE
+    	 FROM  
+           POST  
+     </select>
+     
+  <select   id="getPost"
+  		resultMap ="getViewMap">
+    	SELECT  
+    	  PO_NUM
+		, COM_ID
+		, PO_TITLE
+		, SKILL
+		, CAREER
+		, REGION
+		, EMPLO
+		, PO_SUBTITLE
+		, PO_CONTENT
+		, PO_IMAGE
+    	 FROM  
+           POST  
+        WHERE PO_NUM = #{ po_num }
+     </select>
+  
+  <select id="getView" resultMap ="getViewMap">
+  	SELECT     COM.COM_NAME,
+               PO.PO_NUM,
+               PO.COM_ID,
+               PO.PO_TITLE,
+               PO.SKILL,
+               PO.CAREER,
+               PO.REGION,
+               PO.EMPLO,
+               PO.PO_SUBTITLE,
+               PO.PO_CONTENT,
+               PO.PO_IMAGE
+          FROM POST PO, COMPANY COM
+         WHERE PO.COM_ID = COM.COM_ID
+           AND PO_NUM = #{ po_num }
+  </select>
+  
+  <insert id="insertCom_Post">
+  	INSERT INTO POST(
+		PO_NUM,
+		COM_ID,
+		PO_TITLE,
+		SKILL,
+		CAREER,
+		REGION,
+		EMPLO,
+		PO_SUBTITLE,
+		PO_CONTENT
+  	)
+  	VALUES(
+	  	(SELECT NVL(MAX(PO_NUM), 0) + 1 FROM POST ),
+	  	#{com_id},
+	  	#{po_title},
+	  	#{skill},
+	  	#{career},
+	  	#{region},
+	  	#{emplo},
+	  	#{po_subtitle},
+	  	#{po_content}
+  	)
+  </insert>
+  <select id="getPostComList">
+  	SELECT  
+  		  PO_NUM
+		, COM_ID
+		, PO_TITLE
+		, SKILL
+		, CAREER
+		, REGION
+		, EMPLO
+		, PO_SUBTITLE
+		, PO_CONTENT
+		, PO_IMAGE
+	FROM POST
+	WHERE COM_ID = #{com_id}
+  </select>
+</mapper>

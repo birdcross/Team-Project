@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.TeamProject.users.apply.mapper.ApplyMapper">
+
+	<resultMap id="getApplyHistory" type="java.util.HashMap">
+	 <result property="user_id"      column="user_id"   />
+	 <result property="po_num"       column="po_num"   />
+	 <result property="re_num"       column="re_num"   />
+	 <result property="user_title"   column="user_title"   />
+	 <result property="po_title"     column="po_title" />
+	 <result property="com_date"     column="com_date"    />
+	 <result property="result"       column="result"      />
+	</resultMap>
+	
+	<select   id="getApplyMap" 
+  			resultMap = "getApplyHistory">
+    	SELECT  RE.USER_ID
+    	 	, AP.PO_NUM
+			, AP.RE_NUM
+			, AP.USER_TITLE
+			, AP.PO_TITLE
+			, AP.COM_DATE
+			, AP.RESULT
+    	 FROM  
+           APPLY AP, RESUME RE
+         WHERE
+           RE.USER_ID = #{ user_id }
+          AND
+           AP.RE_NUM = RE.RE_NUM
+        
+         
+     </select>
+     
+	<select   id="getApplyList" >
+    	SELECT  RE_NUM
+    	 	, PO_NUM
+			, RE_NUM
+			, USER_TITLE
+			, PO_TITLE
+			, COM_DATE
+			, RESULT
+    	 FROM  
+           APPLY
+     </select>
+     
+</mapper>
