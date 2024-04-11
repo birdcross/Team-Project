@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 
-            <form action="/Company/Delete" id="delete_form" method="POST">
+            <form action="/Company/Delete?com_id=${ sessionScope.clogin.com_id}" id="delete_form" method="POST">
                               <div class="d-grid gap-2 d-md-flex justify-content-md-end">
   <button class="btn btn-danger" type=submit form="delete_form" style="width:100px; height:40px;" >회원탈퇴</button>
                               </div>

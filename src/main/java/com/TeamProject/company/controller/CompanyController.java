@@ -161,7 +161,7 @@ public class CompanyController {
 		companyMapper.deleteCompany( companyVo );
 		
 		ModelAndView  mv  = new ModelAndView();
-		mv.setViewName("Company/Login");
+		mv.setViewName("redirect:/Company/Login");
 		return  mv;
 		
 	}
