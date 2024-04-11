@@ -50,19 +50,24 @@
 								<br>
 							 <span>근무지 &ensp;&ensp;&nbsp; | &nbsp </span> <select name="region" class="jm_select selectpicker">>
 								<option value="경기">전국</option>
-								<option value="경기">경기</option>
 								<option value="서울">서울</option>
 								<option value="부산">부산</option>
-								<option value="경기">경남</option>
+								<option value="인천">인천</option>
+								<option value="경기">경기</option>
+								<option value="충북">충북</option>
+								<option value="충남">충남</option>
+								<option value="전북">전북</option>
+								<option value="전남">전남</option>
+								<option value="강원">강원</option>
+								<option value="경북">경북</option>
+								<option value="경남">경남</option>
 								<option value="제주">제주</option>
-								<option value="울산">울산</option>
 							</select>
 							<br>
 							 <span>고용형태 &nbsp&nbsp  | &nbsp </span> <select name="emplo" class="jm_select selectpicker">>
-								<option value="인턴">인턴</option>
-								<option value="계약직">계약직</option>
 								<option value="정규직">정규직</option>
-								<option value="프리랜서">프리랜서</option>
+								<option value="계약직">계약직</option>
+							    
 							</select>
 							<div class="mt-5">
 								<h4>공고 소제목</h4>
