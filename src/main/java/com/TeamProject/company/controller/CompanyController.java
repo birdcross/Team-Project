@@ -144,15 +144,14 @@ public class CompanyController {
 		return mv;
 	}
 
-	@RequestMapping("/Update")	
-	public  ModelAndView  Update ( CompanyVo companyVo  ) {
-		
-	companyMapper.updateCompany( companyVo );
-	
-	ModelAndView   mv   =  new  ModelAndView();
-	mv.setViewName("redirect:/Company/Main");
-	return mv;
-	}
+	   @RequestMapping("/Update")
+	   public  ModelAndView  Update ( CompanyVo companyVo  ) {   
+	   companyMapper.updateCompany( companyVo );
+	   ModelAndView   mv   =  new  ModelAndView();
+	   String com_id = companyVo.getCom_id();
+	   mv.setViewName("redirect:/Company/Info?com_id=" + com_id);
+	   return mv;
+	   }
 	
 	
 	@RequestMapping("/Delete")

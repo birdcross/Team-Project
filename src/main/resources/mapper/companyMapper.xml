@@ -65,7 +65,7 @@
 	
 	   DELETE 
 	   FROM  COMPANY  
-         WHERE   COM_ID = #{ com_id}  
+         WHERE   COM_ID = #{ com_id }  
 	
 	</delete>
 	
