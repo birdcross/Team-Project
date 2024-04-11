@@ -107,4 +107,19 @@
 	FROM POST
 	WHERE COM_ID = #{com_id}
   </select>
+  
+  
+    <delete id="deleteComPost">
+    
+  	DELETE  
+  	FROM POST 
+	WHERE PO_NUM = #{po_num}
+	
+  </delete>
+  
+  
+  
+  
+  
+  
 </mapper>

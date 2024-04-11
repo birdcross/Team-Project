@@ -21,6 +21,10 @@ public interface PostMapper {
 
 	List<PostVo> getPostComList(PostVo postVo);
 
+
+	void deleteComPost(PostVo postVo);
+
+
 	
 	
 }

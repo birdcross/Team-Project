@@ -14,20 +14,28 @@
                 <h1 class="mb-4">등록한 공고</h1>
                 <hr>
                 <div class="jh_resume mt-5">
-                    <button class="jh_resume_button mb-5 rounded  jm_card" onclick="location.href=`/Company/SavePostForm?com_id=${ sessionScope.clogin.com_id}`;">➕ 새로운 공고
-                        등록</button>
+                    <button class="jh_resume_button mb-5 rounded  jm_card" 
+                    onclick="location.href=`/Company/SavePostForm?com_id=${ sessionScope.clogin.com_id}`;">
+                    ➕ 새로운 공고 등록</button>
                     
                     <c:forEach items="${postComList}" var = "pocom">
                     <div class="jh_resume_content mb-3" style="display: flex; justify-content: space-between">
+                    
                     <div style="">
                     	<a href="/Company/PostDetail?po_num=${pocom.po_num}&com_id=${ sessionScope.clogin.com_id }"> ${pocom.po_title} </a>
                         <div id="post_deadline_${status.count}" value="${post.deadline}">마감 기한 : ~${post.deadline}</div>
                     </div>
+                    
+                    <form action="/Company/DeletePost?po_num=${pocom.po_num}&com_id=${ sessionScope.clogin.com_id }" 
+                    id="delete_button_${status.count}" method="POST">
                     <div style="display: flex;">
-                        <button type="button" id="delete_button_${status.count}" class="btn btn-dark" onclick="deleteById(${post.id})">삭제</button>
+                        <button type="submit" form="delete_button_${status.count}" class="btn btn-dark">삭제</button>
                         </div>
+                        </form>
+                        
                     </div>
                     </c:forEach>
+                    
                      <input type="hidden" value="${size}" id="postSize"/>
                 </div>
             </div>

@@ -173,6 +173,18 @@ public class CompanyController {
 		mv.setViewName("company/community");
 		return mv;
 	}
+	
+	
+	
+	@RequestMapping("/DeletePost")
+	public  ModelAndView  DeletePost(PostVo postVo){
+		
+		postMapper.deleteComPost( postVo );		
+		ModelAndView   mv   =  new  ModelAndView();
+		String com_id = postVo.getCom_id();
+		mv.setViewName("redirect:/Company/Posts?com_id=" + com_id);
+		return   mv;
+	}
 }
 
 
