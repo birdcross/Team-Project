@@ -33,13 +33,13 @@
 						<br>
 						 <span>분야 &ensp;&ensp;&ensp;&ensp;
 								| &nbsp </span> <select name="skill" class="jm_select selectpicker">
-								<option value="Java">Java</option>
-								<option value="Springboot">Springboot</option>
-								<option value="C">C</option>
-								<option value="CSS">CSS</option>
-								<option value="html">Html</option>
-								<option value="Flutter">Flutter</option>
-								<option value="JavaScript">JavaScript</option>
+								<option value="JAVA">JAVA</option>
+								<option value="HTML/CSS">HTML/CSS</option>
+								<option value="JSP">JSP</option>
+								<option value="ORACLE">ORACLE</option>
+								<option value="SPRINGBOOT">SPRINGBOOT</option>
+								<option value="GITHUB">GITHUB</option>
+								<option value="PYTHON">PYTHON</option>
 							</select>
 							<br>
 				

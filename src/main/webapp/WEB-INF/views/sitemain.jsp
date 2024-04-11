@@ -20,8 +20,6 @@
         <body>
             <header>
                 <input type="hidden" id="current" val="siteMain" />
-
-
                 <div class="mt-2">
                     <nav class="sj_full_container navbar bg-body-tertiary">
                         <div class="container mt-3" style="display: block; width: 100%; text-align: center;">
