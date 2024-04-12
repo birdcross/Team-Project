@@ -185,6 +185,17 @@ public class CompanyController {
 		mv.setViewName("redirect:/Company/Posts?com_id=" + com_id);
 		return   mv;
 	}
+	
+	@RequestMapping("/PostDetail")
+	public  ModelAndView  PostDetailForm ( PostVo postVo  ) {
+		PostVo pvo= postMapper.getPostDetail( postVo );
+		ModelAndView   mv   =  new  ModelAndView();
+		mv.addObject("pvo", pvo );
+		mv.setViewName("company/postDetail");
+		return mv;
+	}
+	
+	
 }
 
 
