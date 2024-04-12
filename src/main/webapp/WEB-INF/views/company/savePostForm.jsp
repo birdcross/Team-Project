@@ -76,7 +76,7 @@
 							</div>
 							<br>
 							<div>
-								<h4>공고내용</h4>
+								<h4>공고 내용</h4>
 								<textarea name="po_content" class="w-100 opacity-50" rows="10"
 									placeholder="내용을 입력하세요"></textarea>
 							</div>
