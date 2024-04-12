@@ -23,7 +23,7 @@
                     
                     <div style="">
                     	<a href="/Company/PostDetail?po_num=${pocom.po_num}&com_id=${ sessionScope.clogin.com_id }"> ${pocom.po_title} </a>
-                        <div id="post_deadline_${status.count}" value="${post.deadline}">마감 기한 : ~${post.deadline}</div>
+                        <div id="post_deadline_${status.count}" value="${post.deadline}">마감기한 : ~${post.deadline}</div>
                     </div>
                     
                     <form action="/Company/DeletePost?po_num=${pocom.po_num}&com_id=${ sessionScope.clogin.com_id }" 
