@@ -20,5 +20,8 @@ public class ApplyVo {
 	private String po_title;
 	private String com_date;
 	private String result;
+	private String com_id;
+	
+
 	
 }

@@ -221,9 +221,59 @@ public class UsersController {
 	mv.setViewName("redirect:/Users/Main");
 	return mv;
 	
-	
-	
 }
+	
+	@RequestMapping("/ResumeUpdate")	
+	public  ModelAndView  resumeUpdate ( ResumeVo resumeVo, UserVo userVo  ) {
+		
+		ResumeVo   rv  =  resumeMapper.getResumeVo( resumeVo );
+	      UserVo   uv  =  userMapper.getUser( userVo );
+		
+		ModelAndView   mv   =  new  ModelAndView();
+	      mv.addObject("rv", rv);
+	      mv.addObject("uv", uv);
+		mv.setViewName("users/resumeUpdate");
+		return mv;
+	}
+	
+	@RequestMapping("/Update2")	
+	public  ModelAndView  update2 ( ResumeVo resumeVo, UserVo userVo  ) {
+		
+
+		resumeMapper.updateResume( resumeVo );
+		String user_id = resumeVo.getUser_id();
+
+		
+	      ModelAndView   mv   =  new  ModelAndView();
+	    
+		mv.setViewName("redirect:/Users/ResumeForm?user_id=" + user_id);
+		return mv;
+		
+	}
+	
+	   @RequestMapping("/DeleteResume")
+	   public  ModelAndView  deleteResume(ResumeVo resumeVo){
+	      
+	      resumeMapper.deleteResume( resumeVo );      
+	      ModelAndView   mv   =  new  ModelAndView();
+	      String user_id = resumeVo.getUser_id();
+	      mv.setViewName("redirect:/Users/ResumeForm?user_id=" + user_id);
+	      return   mv;
+	   }
+	
+	   @RequestMapping("/Insert")	
+		public  ModelAndView  insert ( ApplyVo applyVo, ResumeVo resumeVo  ) {
+			
+			applyMapper.insertApply( applyVo );
+			String user_id = resumeVo.getUser_id();
+			
+			ModelAndView   mv   =  new  ModelAndView();
+			mv.setViewName("redirect:/Users/History?user_id="+user_id);
+			return mv;
+			
+		}
+
+	
 
   
 }  

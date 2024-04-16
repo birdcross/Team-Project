@@ -21,4 +21,6 @@ public interface CompanyMapper {
 
 	void deleteCompany(CompanyVo companyVo);
 
+
+
 }

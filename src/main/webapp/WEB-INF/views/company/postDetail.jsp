@@ -10,8 +10,7 @@
 	</div>
 
 	<div class=" mx-2 pb-4 w-100">
-
-			<input type = "hidden" name = "com_id" value ="${ sessionScope.clogin.com_id}" >
+			<form action="/Company/PostDetailUpdateView?po_num=${pvo.po_num}&com_id=${pvo.com_id}" method="post" enctype="multipart/form-data">
 			<div class="border border-tertiary w-100 p-5 rounded shadow">
 
 				<h1>
@@ -58,7 +57,7 @@
 
 							<div class="d-flex mt-4 justify-content-center">
 								<div class="px-2">
-									<button type="submit" class="btn btn-dark">수정</button>
+									<button type="submit" class="btn btn-dark">수정하기</button>
 								</div>
 							</div>
 						</div>

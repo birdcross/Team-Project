@@ -16,6 +16,10 @@ public interface ApplyMapper {
 
 	List<ApplyVo> getApplyList(ApplyVo applyVo);
 
+	void insertApply(ApplyVo applyVo);
+
+	List<ApplyVo> getApplyList2(ApplyVo applyVo);
+
 	
 	
 }

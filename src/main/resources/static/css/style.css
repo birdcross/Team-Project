@@ -52,6 +52,12 @@ footer {
     max-width: none !important;
 }
 
+.sj_ha_container {
+    min-height: calc(100% - 210px);
+    width : 1000px;
+    margin : auto;
+}
+
 .main_body {
     background-image: url("/images/bg.jpg");
 }
@@ -111,6 +117,17 @@ footer {
 .container {
     width: 1300px;
     max-width: none !important;
+}
+
+.container2 {
+    width: 1300px;
+    max-width: none !important;
+}
+
+.postList_st {
+	padding-top : 10px;
+	text-align: center;
+	font-size: x-large;
 }
 
 .proposalBtn:hover {

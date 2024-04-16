@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.TeamProject.bookmark.mapper.BookmarkMapper">
+
+<update id="ComBookmark">
+    UPDATE RESCR
+    SET 
+    BOOKMARK = CASE WHEN BOOKMARK = 0 THEN 1 ELSE 0 END
+    WHERE RE_NUM = #{re_num} AND COM_ID = #{com_id} AND USER_ID = #{user_id}
+</update>
+</mapper>

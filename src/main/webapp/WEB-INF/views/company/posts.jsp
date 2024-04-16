@@ -21,9 +21,8 @@
                     <c:forEach items="${postComList}" var = "pocom">
                     <div class="jh_resume_content mb-3" style="display: flex; justify-content: space-between">
                     
-                    <div style="">
+                    <div class="postList_st" style="">
                     	<a href="/Company/PostDetail?po_num=${pocom.po_num}&com_id=${ sessionScope.clogin.com_id }"> ${pocom.po_title} </a>
-                        <div id="post_deadline_${status.count}" value="${post.deadline}">마감기한 : ~${post.deadline}</div>
                     </div>
                     
                     <form action="/Company/DeletePost?po_num=${pocom.po_num}&com_id=${ sessionScope.clogin.com_id }" 

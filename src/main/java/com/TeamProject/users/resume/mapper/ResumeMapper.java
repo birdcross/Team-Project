@@ -14,7 +14,7 @@ public interface ResumeMapper {
 
 	HashMap<String, Object> getResume(ResumeVo resumeVo);
 
-	List<ResumeVo> getResumeList(ResumeVo resumeVo);
+	List<ResumeVo> getResumeList();
 
 	HashMap<String, Object> getSRList(ResumeVo resumeVo);
 
@@ -22,9 +22,17 @@ public interface ResumeMapper {
 
 	ResumeVo getResumeVo(ResumeVo resumeVo);
 
-	List<ResumeVo> getComResumeList();
+	List<ResumeVo> getResumeList(ResumeVo resumeVo);
 
+	List<ResumeVo> getMainResumeList();
 
+	List<ResumeVo> getResumeList1();
+
+	HashMap<String, Object> getComView(ResumeVo resumeVo);
+
+	void deleteResume(ResumeVo resumeVo);
+
+	void updateResume(ResumeVo resumeVo);
 
 	
 }

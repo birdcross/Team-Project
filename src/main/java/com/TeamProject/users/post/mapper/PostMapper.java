@@ -24,7 +24,14 @@ public interface PostMapper {
 
 	void deleteComPost(PostVo postVo);
 
+	void postDtailUpdate(PostVo postVo);
+
 	PostVo getPostDetail(PostVo postVo);
+
+	PostVo getPostDetail1(PostVo postVo);
+
+
+
 
 
 	

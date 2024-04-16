@@ -23,8 +23,8 @@
         USER_GENDER)
     VALUES   ( 
        #{ user_id   },
-       #{ user_pw },
-       #{ user_name  },
+       #{ user_name },
+       #{ user_pw  },
        #{ user_tell  },
        #{ user_date  },
        #{ user_gender  }

@@ -11,38 +11,28 @@
 <div class=" mx-2 pb-4 w-100">
             <div class="border border-tertiary  p-5 rounded shadow">
                 <div class="d-flex justify-content-between">
-                    <h1>${companyPS.name}에 도착한 이력서를 검토해보세요💌</h1>
+                    <h1>이력서 지원현황💌</h1>
                 </div>
                 <hr>
 
                 <div class="container mb-5 mt-5 w-100">
                     <table class="table table-hover">
-                        <tr class="table-dark">
-                            <th class="col-4 px-2">&nbsp &nbsp 지원 공고</th>
-                            <th class="col-1">이름</th>
-                            <th class="col-5">이력서</th>
-                            <th class="col-3">지원날짜</th>
-                        </tr>
-                        <c:forEach items="${companyProposalList}" var="proposal">
-                        
-                            <c:choose>
-                                <c:when test="${proposal.status==0}">
-                                    <tr>
-                                </c:when>
-                                <c:when test="${proposal.status==1}">
-                                    <tr class="table-info">
-                                </c:when>
-                                <c:otherwise>
-                                    <tr class="table-secondary">
-                                </c:otherwise>
-                            </c:choose>
-                        
-                            <td> &nbsp &nbsp ${proposal.ptitle}</td>
-                            <td>${proposal.name}</td>
-                            <td><a href="/company/resumeDetail/${proposal.resumeId}" class="text-decoration-none">${proposal.rtitle}</a></td>
-                            <td>${proposal.createdAt}</td>
-                        </tr>
-                        </c:forEach>
+                        <tr class=" table-dark">
+						<th class="col-4 text-center">지원 공고</th>
+						<th class="col-3 text-center">이력서 번호</th>
+						<th class="col-2 text-center">이력서 제목</th>
+						<th class="col-2 text-center">합격 여부</th>
+					</tr>
+                        <c:forEach items="${ applyList }" var="ap" varStatus="status">
+
+						<tr>
+							<td class="text-center">${ap.po_title}</td>
+							<td class="text-center">${ap.re_num}</td>
+							<td class="text-center">&nbsp &nbsp <a href="/Company/View?re_num=${ ap.re_num }"
+								style="text-decoration: none;">${ap.user_title}</a></td>
+							<td class="text-center">${ap.result}</td>
+						</tr>
+					</c:forEach>
                     </table>
                 </div>
             </div>

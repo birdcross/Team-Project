@@ -58,18 +58,11 @@
                                     <input type="text" class="form-control" name="user_gender" value="${uvo.user_gender}" >
                                 </div>
 
-
-                         <!--        <hr class="my-4">
-                                <div class="mt-5 jh_resume_skill">
-                                    <h4>기술스택</h4>
-                                    <div class="">                                      
-                                        <ul>
-                                            <c:forEach items="${pSkillArr}" var="pSkill">
-                                                <li>${pSkill}</li>
-                                            </c:forEach>
-                                        </ul>                                 
-                                    </div>
-                                </div>             -->
+<form action="/Users/Delete?user_id=${ sessionScope.login.user_id}" id="delete_form" method="POST">
+                              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="btn btn-danger" type=submit form="delete_form" style="width:100px; height:40px;" >회원탈퇴</button>
+                              </div>
+                   		     </form>
                             
                             
                             </form>

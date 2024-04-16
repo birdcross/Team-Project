@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.TeamProject.community.mapper.ComuMapper">
+
+  
+    <select  id = "getComuList">
+	  SELECT   
+			COMU_BNO,
+			COMU_TITLE,
+			COMU_CONTENT,
+			USER_ID,
+			COMU_HIT,
+			COMU_DATE       
+	   FROM  
+	       COMMUNITY
+	</select>
+	
+	<insert id="inserusercomu">
+		INSERT  INTO  COMMUNITY  ( 
+	        COMU_BNO,
+			COMU_TITLE,
+			COMU_CONTENT,
+			USER_ID,
+			COMU_HIT,
+			COMU_DATE
+			)
+    VALUES   ( 
+       (SELECT NVL(MAX(COMU_BNO), 0) + 1 FROM COMMUNITY ),
+       #{comu_title },
+       #{ comu_content  },
+       #{ user_id  },
+       #{ comu_hit },
+       TO_CHAR(SYSDATE, 'YYYY.MM.DD')
+    )
+	
+	</insert>
+	
+	
+</mapper>

@@ -19,7 +19,7 @@
                     <div class="container mb-5 mt-5 w-100">
                         <div class="d-flex justify-content-between align-center align-items-center bg-dark px-5"
                             style="height: 40px;">
-                            <div class="text-light" style="position: relative;left: 20px;"><b>이름</b></div>
+                             <div class="text-light" style="position: relative;left: 20px;"><b>이름</b></div>
                             <div class="text-light" style="position: relative;left: 30px;"><b>이력서</b></div>
                             <div class="text-light" style="position: relative;left: 130px;"><b>기술스택 </b></div>
                             <div style="width: 50px;"></div>

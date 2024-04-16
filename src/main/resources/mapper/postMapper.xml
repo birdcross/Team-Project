@@ -136,6 +136,40 @@
 	
   </select>
   
+   <select id="getPostDetail1">
+  	SELECT  
+  		  PO_NUM
+  		, COM_ID
+		, PO_TITLE
+		, SKILL
+		, CAREER
+		, REGION
+		, EMPLO
+		, PO_SUBTITLE
+		, PO_CONTENT
+		, PO_IMAGE
+	FROM POST
+	WHERE COM_ID = #{com_id}
+	AND PO_NUM = #{po_num}
+	
+  </select>
+   <update id="postDtailUpdate">
+   	
+      UPDATE   POST
+         SET   
+         	PO_NUM = #{po_num},
+			COM_ID = #{com_id},
+			PO_TITLE = #{po_title},
+			SKILL = #{skill},
+			CAREER = #{career},
+			REGION = #{region},
+			EMPLO = #{emplo},
+			PO_SUBTITLE = #{po_subtitle},
+			PO_CONTENT = #{po_content},
+			PO_IMAGE = #{po_image}
+		WHERE COM_ID = #{com_id}
+		AND PO_NUM = #{po_num}
+   </update>
   
   
   

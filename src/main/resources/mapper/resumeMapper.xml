@@ -20,7 +20,7 @@
 	 <result property="user_id"      column="user_id"   />
 	 <result property="user_title"   column="user_title"   />
 	 <result property="skill"        column="skill" />
-	 <result property="career"       column="emcareerail"    />
+	 <result property="career"       column="career"    />
 	 <result property="region"       column="region"      />
 	 <result property="user_port"    column="user_port"   />
 	 <result property="user_intti"   column="user_intti"   />	
@@ -28,6 +28,22 @@
 	 <result property="user_name"     column="user_name"   />	
 	 <result property="user_tell"     column="user_tell"   />	
 	 <result property="user_date"     column="user_date"   />	
+	</resultMap>
+	
+	  <resultMap id="getComView" type="java.util.HashMap">
+	 <result property="user_name"       column="user_name"   />
+	 <result property="user_date"       column="user_date"   />
+	 <result property="user_tell"       column="user_tell"   />
+	 <result property="re_num"         column="re_num"   />
+	 <result property="user_id"         column="user_id"   />
+	 <result property="user_title"       column="user_title"   />
+	 <result property="skill"          column="skill" />
+	 <result property="career"         column="career"    />
+	 <result property="region"         column="region"      />
+	 <result property="user_port"          column="user_port"   />
+	 <result property="user_intti"    column="user_intti"   />	
+	 <result property="user_intco"     column="user_intco"   />	
+	 <result property="user_img"       column="user_img"   />	
 	</resultMap>
 			
   <select   id="getResume" 
@@ -129,5 +145,74 @@
          WHERE
            RE_NUM = #{ re_num }
      </select>
-     
+     <select id="getMainResumeList">
+         	SELECT  
+    	 	  RE_NUM
+			, USER_ID
+			, USER_TITLE
+			, SKILL
+			, CAREER
+			, REGION
+			, USER_PORT
+			, USER_INTTI
+			, USER_INTCO
+    	 FROM  
+           RESUME
+     </select>
+          <select id="getResumeList1">
+         	SELECT  
+    	 	  RE_NUM
+			, USER_ID
+			, USER_TITLE
+			, SKILL
+			, CAREER
+			, REGION
+			, USER_PORT
+			, USER_INTTI
+			, USER_INTCO
+    	 FROM  
+           RESUME
+     </select>
+     <select id="getComView" resultMap ="getComView">
+		SELECT
+			US.USER_NAME,
+			TO_CHAR(US.USER_DATE, 'YYYY.MM.DD') USER_DATE,
+			US.USER_TELL,
+			RE.RE_NUM, 
+			RE.USER_ID, 
+			RE.USER_TITLE, 
+			RE.SKILL, 
+			RE.CAREER, 
+			RE.REGION, 
+			RE.USER_PORT, 
+			RE.USER_INTTI, 
+			RE.USER_INTCO, 
+			RE.USER_IMG 
+		FROM RESUME RE, USERS US 
+         WHERE RE.USER_ID = US.USER_ID
+           AND RE_NUM = #{re_num }
+  </select>
+  
+    <delete id="deleteResume">
+    
+     DELETE  
+     FROM RESUME 
+   WHERE RE_NUM = #{re_num}
+   
+  </delete>
+  
+  <update  id="updateResume">
+	
+      UPDATE   RESUME
+         SET   USER_TITLE   = #{ user_title },
+               SKILL     = #{ skill },  
+               CAREER     = #{ career },    
+               REGION     = #{ region },    
+               USER_PORT     = #{ user_port },    
+               USER_INTTI     = #{ user_intti },    
+               USER_INTCO     = #{ user_intco }   
+         WHERE   RE_NUM   = #{ re_num }
+         
+	</update>
+  
 </mapper>

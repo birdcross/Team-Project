@@ -32,15 +32,46 @@
      </select>
      
 	<select   id="getApplyList" >
-    	SELECT  RE_NUM
-    	 	, PO_NUM
-			, RE_NUM
-			, USER_TITLE
-			, PO_TITLE
-			, COM_DATE
-			, RESULT
+    	SELECT   AP.PO_NUM
+			, AP.RE_NUM
+			, AP.USER_TITLE
+			, AP.PO_TITLE
+			, AP.COM_DATE
+			, AP.RESULT
     	 FROM  
-           APPLY
+           APPLY AP, RESUME RE
+         WHERE
+           RE.USER_ID = #{ user_id }
+          AND
+           AP.RE_NUM = RE.RE_NUM
      </select>
+     
+	<select   id="getApplyList2" >
+    	 SELECT   AP.PO_NUM
+			, AP.RE_NUM
+			, AP.USER_TITLE
+			, AP.PO_TITLE
+			, AP.COM_DATE
+			, AP.RESULT
+    	 FROM  
+           APPLY AP, POST PO
+         WHERE
+           PO.COM_ID = #{ com_id }
+          AND
+           AP.PO_NUM = PO.PO_NUM
+     </select>
+     
+     <insert id="insertApply">
+     INSERT INTO APPLY ( PO_NUM
+						, RE_NUM
+						, USER_TITLE
+						, PO_TITLE
+						, RESULT )
+				VALUES ( #{ po_num },
+					  	#{ re_num },
+					  	(SELECT USER_TITLE FROM RESUME WHERE RE_NUM = #{ re_num }),
+					  	(SELECT PO_TITLE FROM POST WHERE PO_NUM = #{ po_num }),
+					  	'진행중' )
+     </insert>
      
 </mapper>

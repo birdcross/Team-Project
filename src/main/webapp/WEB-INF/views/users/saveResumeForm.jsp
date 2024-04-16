@@ -77,17 +77,18 @@
 								<span>분야 &nbsp
 								| &nbsp </span> <select name="skill">
 								<option value="JAVA">Java</option>
-								<option value="Springboot">Springboot</option>
-								<option value="C">C</option>
-								<option value="CSS">CSS</option>
-								<option value="html">Html</option>
-								<option value="Flutter">Flutter</option>
-								<option value="JavaScript">JavaScript</option>
+								<option value="HTML/CSS">HTML/CSS</option>
+								<option value="SPRINGBOOT">Springboot</option>
+								<option value="JSP">JSP</option>
+								<option value="ORACLE">ORACLE</option>
+								<option value="GITHUB">GITHUB</option>
+								<option value="PYTHON">PYTHON</option>
 							</select>
 							<span>&ensp;&ensp;</span>
 							 <span>경력 &nbsp | &nbsp </span> <select name="career">
 								<option value="신입">신입</option>
 								<option value="경력">경력</option>
+								<option value="무관">무관</option>
 							</select>
 								<span>&ensp;&ensp;</span>
 							 <span>근무지 &nbsp | &nbsp </span> <select name="region">

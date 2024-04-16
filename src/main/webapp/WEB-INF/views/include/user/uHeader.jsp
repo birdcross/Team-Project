@@ -52,7 +52,7 @@
 						   </c:otherwise>
 						</c:choose>	
 						<li class="nav-item" id="recommend"><a
-							class=" nav-link link-dark" href="/person/recommend">커뮤니티</a></li>
+							class=" nav-link link-dark" href="/Community/ComuHome?user_id=${ sessionScope.login.user_id}">커뮤니티</a></li>
 						<li class="nav-item" id="recommend"><a
 							class=" nav-link link-dark" href="/person/recommend">고객센터</a></li>
 						

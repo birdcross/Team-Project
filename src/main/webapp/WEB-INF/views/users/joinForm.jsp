@@ -25,7 +25,7 @@
                     </div>
                     
                     <div class="form-group form-floating m-3 mx-auto">
-                        <input type="text" name="user_tell" maxlength="10" class="form-control" id="floatingInput"
+                        <input type="text" name="user_tell" maxlength="20" class="form-control" id="floatingInput"
                             placeholder="name@example.com" required>
                         <label for="floatingInput">전화번호</label>
                     </div>
@@ -50,8 +50,8 @@
                     <div class="form-group form-floating m-3 mx-auto">
             		<select id="gender" name="user_gender"class="form-control" id="floatingInput" required>
                 		<option value="none" selected>성별</option>
-                		<option value="male">남자</option>
-                		<option value="female">여자</option>
+                		<option name="남자" value="male">남자</option>
+                		<option name="여자" value="female">여자</option>
 					</select>
                     </div>
 

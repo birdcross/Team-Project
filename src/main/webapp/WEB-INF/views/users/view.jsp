@@ -2,7 +2,7 @@
     <%@include file="/WEB-INF/views/include/user/uHeader.jsp" %>
 
 
-
+		<div class="sj_ha_container">
             <div class=" mx-2 pb-4 w-100">
                 <div class=" border border-tertiary p-5 rounded shadow">
                     <div class="d-flex justify-content-between">
@@ -11,55 +11,84 @@
                             onclick="location.href=`/Users/ApplyForm?po_num=${ po.po_num }&user_id=${ sessionScope.login.user_id }`;">지원하기</button>
                     </div>
                     <hr />
-                    <div>
-                        <div class="container w-50 mt-5 text ">
-                            <form>
-                                <div class="input-group mb-3">
-                                    <span
-                                        class="input-group-text justify-content-center hs_span_size init_color hs_span">제목</span>
-                                    <input type="text" class="form-control" value="${po.po_title}" readonly>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <span
-                                        class="input-group-text justify-content-center hs_span_size init_color hs_span">요구 기술스택</span>
-                                    <input type="text" class="form-control" value="${po.skill}" id="birthday"
-                                        readonly>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <span
-                                        class="input-group-text justify-content-center hs_span_size init_color hs_span">요구 경력</span>
-                                    <input type="text" class="form-control" value="${po.career}" readonly>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <span
-                                        class="input-group-text justify-content-center hs_span_size init_color hs_span">고용형태</span>
-                                    <input type="text" class="form-control" value="${po.emplo}" readonly>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <span
-                                        class="input-group-text justify-content-center hs_span_size init_color hs_span">지역</span>
-                                    <input type="text" class="form-control" value="${po.region}" readonly>
-                                </div>
+	<div class=" mx-2 pb-4 w-100">
+			<form action="/Company/PostDetailUpdateView?po_num=${po.po_num}&user_id=${ sessionScope.login.user_id }" method="post" enctype="multipart/form-data">
+			<div class="border border-tertiary w-100 p-5 rounded shadow">
 
-                                <hr class="my-4">
-                                <div class="mt-5 jh_resume_skill">
-                                    <h4>기술스택</h4>
-                                    <div class="">
-                                        <ul>
-                                            <c:forEach items="${postList}" var="SK">
-                                                <li>${SK.skill}</li>
-                                            </c:forEach>
+				<h1>
+					${ po.po_title }
+				</h1>
 
-                                        </ul>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-            $("#birthday").val($("#birthday").val().split(' ')[0]);
+				<hr>
+				<div class="container" style="width: 85%;">
+					<div class="d-flex row justify-content-center">
+
+						
+					</div>
+				</div>
+				<div class="container" style="width: 85%;">
+					<div class="row justify-content-center">
+						<div class="col-md-14 mx-auto">
+						<br>
+						 <span>분야 &ensp;&ensp;&ensp;&ensp;
+								| &nbsp </span> <span>${ po.skill }</span>
+							
+							<br>
+							<br>
+				
+							 <span>경력 &ensp;&ensp;&ensp;&ensp; | &nbsp </span>
+							 <span>${ po.career }</span>
+								<br>
+								<br>
+							 <span>근무지 &ensp;&ensp;&nbsp; | &nbsp </span>
+							 <span>${ po.region }</span>
+							<br>
+							<br>
+							 <span>고용형태 &nbsp&nbsp  | &nbsp </span> 
+							 <span>${po.emplo }</span>
+							<div class="mt-5">
+								<h4>공고 소제목</h4>
+								<h5>${ po.po_subtitle }</h5>
+							</div>
+							<br>
+							<div>
+								<h5>공고내용</h5>
+								<textarea name="po_content" class="w-100 opacity-50" rows="10"
+									readonly="readonly">${po.po_content } </textarea>
+							</div>
+
+						
+						</div>
+					</div>
+		</form>
+	</div>
+
+</div>
+<script>
+            function countCheck(obj) {
+                let count = $("input:checked[type='checkbox']").length;
+
+                if (count > 5) {
+                    $(this).prop("checked", false);
+                    alert("5개까지만 선택해주세요");
+                    return false;
+                }
+                console.log(obj.value);
+            }
+
+            function chooseImage(obj) {
+                console.log(obj);
+                console.log(obj.files);
+                let f = obj.files[0];
+                if (!f.type.match("image")) {
+                    alert("이미지 파일이 아닙니다!");
+                }
+
+                let reader = new FileReader();
+                reader.readAsDataURL(f);
+                reader.onload = function (e) {
+                    $("#imagePreview").attr("src", e.target.result);
+                }
+
+            }
         </script>
-  <%@include file="/WEB-INF/views/include/footer.jsp" %>

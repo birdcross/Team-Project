@@ -27,17 +27,11 @@
                                     <a href="/Users/ResumeDetail?re_num=${Re.re_num}&user_id=${ sessionScope.login.user_id }"> ${Re.user_title} </a>
                                 </div>
                                 <div>
-                                    <c:choose>
-                                        <c:when test="${resume.publish == true}">
-                                            <button type="button" class="btn btn-success">공개중</button>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <button type="button" class="btn btn-warning">비공개중</button>
-                                        </c:otherwise>
-                                    </c:choose>
-
-                                    <button type="button" class="btn btn-dark"
-                                        onclick="deleteResume(${resume.id})">삭제</button>
+       <form action="/Users/DeleteResume?re_num=${Re.re_num}&user_id=${ sessionScope.login.user_id }"
+        id="delete_resume_${status.count}"  method="POST"> 
+       <button type="submit" class="btn btn-dark" id="delete_resume_${status.count}"> 삭제
+       </button>
+       </form>
                                 </div>
                             </div>
                         </c:forEach>

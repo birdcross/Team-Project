@@ -11,7 +11,9 @@
 
             <div class=" mx-2 pb-4 w-100">
                 <div class="border border-tertiary p-5 rounded shadow">
-                    <h1>${ rv.user_title }</h1>
+                	<form action="/Users/Update2" id="update_form2" method="POST">
+                    <h1><input type="text" value="${rv.user_title }" style="width: 700px"
+						class="hs_input_title" ></h1>
                     <hr>
                     <div class="d-flex justify-content-center">
                         <div style="width: 85%;">
@@ -38,23 +40,23 @@
                                 </table>
                             </div>
                             <br>
-                        <span>기술스택 &nbsp | &nbsp </span><select value="rv.skill" disabled>
-                        <option value="Java">Java</option>
-                        <option value="Springboot">Springboot</option>
-                        <option value="C">C</option>
-                        <option value="CSS">CSS</option>
-                        <option value="html">Html</option>
-                        <option value="Flutter">Flutter</option>
-                        <option value="JavaScript">JavaScript</option>
+                        <span>기술스택 &nbsp | &nbsp </span><select value="rv.skill" >
+                     			<option value="JAVA">Java</option>
+						<option value="HTML/CSS">HTML/CSS</option>
+						<option value="SPRINGBOOT">Springboot</option>
+						<option value="JSP">JSP</option>
+						<option value="ORACLE">ORACLE</option>
+						<option value="GITHUB">GITHUB</option>
+						<option value="PYTHON">PYTHON</option>
                      </select>
                      <span>&ensp;&ensp;</span>
-                      <span>경력 &nbsp | &nbsp </span> <select value="rv.career" disabled>
+                      <span>경력 &nbsp | &nbsp </span> <select value="rv.career" >
                         <option value="신입">신입</option>
                         <option value="경력">경력</option>
                         <option value="무관">무관</option>
                      </select>
                         <span>&ensp;&ensp;</span>
-                      <span>근무지 &nbsp | &nbsp </span> <select value="rv.region" disabled>
+                      <span>근무지 &nbsp | &nbsp </span> <select value="rv.region" >
                         <option value="경기">전국</option>
                         <option value="경기">경기</option>
                         <option value="서울">서울</option>
@@ -67,12 +69,12 @@
                                 <h4>포트폴리오 주소</h4>
                                 <input type="url" class="form-control mt-2" id="floatingInput"
                                     placeholder="git 또는 blog 주소를 입력해주세요" style="display: block;"
-                                    value="${ rv.user_port }" readOnly>
+                                    value="${ rv.user_port }" >
                             </div>
                                                  <div class="mt-5">
                         <h4>자기소개서 제목</h4>
                         <input type="text" class="form-control mt-2" id="floatingInput"
-                           placeholder="제목을 입력하세요" value="${ rv.user_intti }" required readOnly>
+                           placeholder="제목을 입력하세요" value="${ rv.user_intti }" required>
                      </div>
                      <br>
                             <div class="mt-5 jh_resume_skill">
@@ -80,22 +82,23 @@
                             <div class="mt-5 w-100">
                                 <h4>자기소개</h4>
 
-                                <textarea value="${ rv.user_intco }" class="w-100 opacity-50" rows="10" readOnly>${ rv.user_intco }
+                                <textarea value="${ rv.user_intco } class="w-100 opacity-50" rows="10" >${ rv.user_intco }
                                </textarea>
                             </div>
 
                             <div class="d-flex mt-4 justify-content-center">
                                 <div class="px-2">
-                                    <button type="button" class="btn btn-dark"
-                                        onclick="location.href=`/Users/ResumeUpdate?re_num=${ rv.re_num }&user_id=${ sessionScope.login.user_id }`">수정하기</button>
-                                        
+                                    <button type="submit" class="btn btn-dark"
+                     style="width:100px; height:40px;" form="update_form2" >수정완료</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
+        <!-- 
         <script>
             function updateResumeForm(id) {
                 console.log(id);
@@ -108,5 +111,5 @@
 
                 });
             }
-        </script>
+        </script>  -->
        <%@include file="/WEB-INF/views/include/footer.jsp" %>

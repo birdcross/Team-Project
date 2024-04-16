@@ -43,7 +43,7 @@
                             <div class="col-xs-4 post">
                                 <a href="/Users/View?po_num=${ Vo.po_num }" style="color: inherit; text-decoration: none;">
                                     <div class="card jm_card h-100">
-                                        <img src="${Vo.po_image}" class="card-img-top jm_card_img_top">
+                                        <img src="/Company/Images?com_id=${ Vo.com_id }" class="card-img-top jm_card_img_top">
                                         <div class="card-body jm_card_body">
                                             <div class="jm_company_name">공고번호 : ${ Vo.po_num }</div>
                                             <div class="jm_company_title">${ Vo.po_title}</div>
