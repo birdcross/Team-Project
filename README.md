@@ -10,6 +10,7 @@ https://www.youtube.com/watch?v=GaHWaF9Ni6c
 https://youtu.be/8EEEXC6dJeU?si=XKN-srOOBei6QT2w
 
 
+***
 
 ## 개인회원 페이지
 #### 1. 회원가입 및 로그인 로그아웃
@@ -41,6 +42,9 @@ https://youtu.be/8EEEXC6dJeU?si=XKN-srOOBei6QT2w
 ![6  이력서 확인 및 권유 + 공고 관리 및 받은 이력서](https://github.com/birdcross/TeamProject/assets/164135405/bebe35a6-3ff2-4c56-bb2c-b945e37dc0a5)
 
 
+***
+
+
 ## 개발환경
 
 ![개발환경](https://github.com/birdcross/TeamProject/assets/164135405/df1289da-09c8-47d4-b64b-9f4db4484f53)
@@ -52,4 +56,7 @@ https://youtu.be/8EEEXC6dJeU?si=XKN-srOOBei6QT2w
 + MyBatis
 
 
+***
+
+## 모델링
 
