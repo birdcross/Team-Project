@@ -45,7 +45,11 @@ https://youtu.be/8EEEXC6dJeU?si=XKN-srOOBei6QT2w
 
 ![개발환경](https://github.com/birdcross/TeamProject/assets/164135405/df1289da-09c8-47d4-b64b-9f4db4484f53)
 
-
++ Java
++ Springboot
++ sqldeveloper
++ junit
++ MyBatis
 
 
 
