@@ -61,4 +61,4 @@ https://youtu.be/8EEEXC6dJeU?si=XKN-srOOBei6QT2w
 ## Junit
 
 ## DB 다이어그램
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/ec3010de-8dcb-441c-b081-71d40eae0b5d/f163fc46-df8f-4e64-b2dc-677df03577a4/Untitled.png)
+![image](https://github.com/birdcross/TeamProject/assets/164135259/307069b5-60dc-4654-8813-1ce4e84b0aa5)
