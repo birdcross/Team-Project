@@ -59,6 +59,7 @@ https://youtu.be/8EEEXC6dJeU?si=XKN-srOOBei6QT2w
 ***
 
 ## Junit
+![image](https://github.com/birdcross/TeamProject/assets/164135259/6c2ea476-e556-44e1-bc95-aae14a20fb5e)
 
 ## DB 다이어그램
 ![image](https://github.com/birdcross/TeamProject/assets/164135259/8bc87f65-0644-4240-ac23-163d684c2b16)
